@@ -12,12 +12,17 @@ public class Deck implements Iterable<Card> {
 
 	private List<Card> cards;
 	
-	public Deck() {
+	public static Deck newSpanishDeck() {
+		return new Deck();
+	}
+	
+	private Deck() {
 		cards = buildDeck();
 	}
 
-	public void shuffle() {
+	public Deck shuffle() {
 		Collections.shuffle(cards);
+		return this;
 	}
 	
 	public Card getTopCard() throws InvalidMoveException {

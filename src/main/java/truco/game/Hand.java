@@ -15,13 +15,9 @@ public class Hand {
 	private List<Card> cards;
 	private Player player;
 	
-	public Hand(Player player) {
-		cards = Lists.newArrayList();
+	public Hand(Player player, List<Card> cards) {
+		this.cards = Lists.newArrayList(cards);
 		this.player = player;
-	}
-	
-	public void addCard(Card topCard) {
-		this.cards.add(topCard);
 	}
 	
 	public Player getPlayer() {
@@ -33,7 +29,8 @@ public class Hand {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
-	public Card getCardAt(int i) {
+//TODO No me convence del todo esto, tengo q conocer todo el tiempo el tamaño de la mano	
+	public Card takeCardAt(int i) {
 		return this.cards.remove(i);
 	}
 
