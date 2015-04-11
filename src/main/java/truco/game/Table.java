@@ -15,10 +15,18 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 
 public class Table {
-
-	private Multimap<Player, Card> spots;
+//Layout ?
+	private Multimap<Player, Card> spots = ArrayListMultimap.create();
 	private List<Player> teamA = Lists.newArrayList();
 	private List<Player> teamB = Lists.newArrayList();
+	
+	public static Table withSpots(Integer spotsNumber) {
+		return new Table(spotsNumber);
+	}
+	
+	private Table(Integer spotsNumber) {
+		
+	}
 	
 	public Table(Collection<Player> players) throws InvalidTeamsException {
 		spots = ArrayListMultimap.create();
@@ -52,6 +60,18 @@ public class Table {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	}
+
+	public void takePlaceAt(int spotNumber, Player player) {
+		assignTeam(spotNumber, player);
+	}
+
+	private void assignTeam(int spotNumber, Player player) {
+		if (spotNumber % 2 == 0) {
+			teamA.add(player);
+		} else {
+			teamB.add(player);
+		}
 	}
 
 }
