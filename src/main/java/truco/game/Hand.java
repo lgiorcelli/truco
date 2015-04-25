@@ -10,6 +10,7 @@ import truco.model.Player;
 
 import com.google.common.collect.Lists;
 
+// TODO pensar q la mano se va quedando con menos cartas en cada vuelta, capaz son estados o algo por el estilo
 public class Hand {
 
 	private List<Card> cards;
@@ -29,9 +30,13 @@ public class Hand {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
-//TODO No me convence del todo esto, tengo q conocer todo el tiempo el tamaño de la mano	
+//TODO No me convence del todo esto, tengo q conocer todo el tiempo el tamaï¿½o de la mano	
 	public Card takeCardAt(int i) {
 		return this.cards.remove(i);
+	}
+
+	public Integer size() {
+		return cards.size();
 	}
 
 }

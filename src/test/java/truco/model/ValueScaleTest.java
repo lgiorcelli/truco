@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import truco.model.Card;
 import truco.model.Suit;
-import truco.model.ValueScale;
+import truco.model.rules.ValueScale;
 
 public class ValueScaleTest {
 

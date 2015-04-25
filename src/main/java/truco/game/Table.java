@@ -62,7 +62,7 @@ public class Table {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
-	public void takePlaceAt(int spotNumber, Player player) {
+	public void assignPlaceAt(int spotNumber, Player player) {
 		assignTeam(spotNumber, player);
 	}
 

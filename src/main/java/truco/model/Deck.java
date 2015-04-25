@@ -12,6 +12,7 @@ public class Deck implements Iterable<Card> {
 
 	private List<Card> cards;
 	
+	//Este mazo es de 40 cartas, faltan 8 y 9
 	public static Deck newSpanishDeck() {
 		return new Deck();
 	}

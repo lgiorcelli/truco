@@ -1,6 +1,9 @@
-package truco.model;
+package truco.model.rules;
 
 import java.util.Map;
+
+import truco.model.Card;
+import truco.model.Suit;
 
 import com.google.common.collect.Maps;
 
